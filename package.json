@@ -1,0 +1,63 @@
+{
+  "name": "@collabland/example-hello-action",
+  "version": "0.0.1",
+  "description": "CollabLand Hello action",
+  "keywords": [
+    "CollabLand",
+    "Collab.Land",
+    "action",
+    "Discord",
+    "loopback"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "lb-tsc -b",
+    "build:watch": "lb-tsc -b --watch",
+    "build:full": "npm ci && npm run rebuild && npm run test:dev",
+    "prettier:cli": "lb-prettier \"**/*.ts\" \"**/*.md\"",
+    "prettier:check": "npm run prettier:cli -- -l",
+    "prettier:fix": "npm run prettier:cli -- --write",
+    "pretest": "npm run build",
+    "test": "lb-mocha --allow-console-logs \"dist/__tests__\"",
+    "rebuild": "npm run clean && npm run build",
+    "clean": "lb-clean dist *.tsbuildinfo .eslintcache",
+    "start": "npm run rebuild && node dist/server",
+    "server": "node dist/server",
+    "client": "node dist/client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:abridged/collabland-hello-action.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "files": [
+    "README.md",
+    "dist",
+    "src",
+    "!*/__tests__"
+  ],
+  "dependencies": {
+    "@collabland/action": "^0.6.0",
+    "@collabland/common": "^0.45.0",
+    "@collabland/discord": "^0.23.0",
+    "@collabland/models": "^0.25.0",
+    "@loopback/core": "^4.0.8",
+    "@loopback/rest": "^12.0.8",
+    "discord-api-types": "^0.37.32",
+    "discord.js": "^14.7.1",
+    "tslib": "^2.0.0"
+  },
+  "devDependencies": {
+    "@loopback/build": "^9.0.8",
+    "@loopback/eslint-config": "^13.0.8",
+    "@loopback/testlab": "^5.0.8",
+    "@types/node": "^18.11.15",
+    "typescript": "~4.9.5"
+  },
+  "copyright.owner": "Abridged, Inc.",
+  "author": "Abridged, Inc."
+}
