@@ -96,7 +96,7 @@ describe('HelloAction - ecdsa', () => {
     ]);
     expect(result.response).to.eql({
       type: 4,
-      data: {content: 'Hello, John!', flags: 64},
+      data: {content: 'Welcome to ETHDenver, John!', flags: 64},
     });
   });
 });

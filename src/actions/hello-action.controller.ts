@@ -80,7 +80,7 @@ export class HelloActionController extends BaseDiscordActionController<APIChatIn
      * Get the value of `your-name` argument for `/hello-action`
      */
     const yourName = getCommandOptionValue(interaction, 'your-name');
-    const message = `Hello, ${
+    const message = `Welcome to ETHDenver, ${
       yourName ?? interaction.user?.username ?? 'World'
     }!`;
     /**
