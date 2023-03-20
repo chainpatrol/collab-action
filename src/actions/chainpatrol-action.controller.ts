@@ -208,13 +208,13 @@ export class ChainPatrolActionController extends BaseDiscordActionController<API
     const commands: ApplicationCommandSpec[] = [
       {
         metadata: {
-          name: 'ChainPatrol',
+          name: 'ChainPatrolAction',
           shortName: 'chainpatrol',
           supportedEnvs: ['dev', 'qa', 'staging'],
         },
         name: 'chainpatrol',
         type: ApplicationCommandType.ChatInput,
-        description: 'Security and scam prevention for web3 communities',
+        description: 'Security and scam prevention tools for web3 communities',
         options: [
           // `/chainpatrol check <url>` slash command
           {
