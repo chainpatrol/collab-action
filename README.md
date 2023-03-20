@@ -40,9 +40,10 @@ servers
 
 ## Screenshots :camera:
 
-screenshot1
+![CleanShot 2023-03-20 at 14 25 01@2x](https://user-images.githubusercontent.com/8302959/226469979-f887abcc-0a39-476e-be4a-e77e79473fbc.png)
 
-screenshot2
+![CleanShot 2023-03-20 at 14 26 01@2x](https://user-images.githubusercontent.com/8302959/226469929-92824469-a736-434f-bfeb-849f54a72e90.png)
+
 
 ## Usage :computer:
 
