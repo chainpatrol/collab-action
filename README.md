@@ -14,13 +14,6 @@ servers
 
 </div>
 
----
-
-| Environment | URL                                                           |
-| ----------- | ------------------------------------------------------------- |
-| Production  | https://chainpatrol-collab-action-production.up.railway.app/  |
-| Development | https://chainpatrol-collab-action-development.up.railway.app/ |
-
 ## Features :rocket:
 
 - :raising_hand: Easy integration with Discord servers through Collab.land
@@ -84,3 +77,12 @@ new and test it locally
 Explore more possibilities with Collab Action!
 
 3. [Build a custom Collab Action](https://dev.collab.land/docs/upstream-integrations/build-a-custom-action)
+
+---
+
+| Environment | URL                                                           |
+| ----------- | ------------------------------------------------------------- |
+| Production  | https://chainpatrol-collab-action-production.up.railway.app/  |
+| Development | https://chainpatrol-collab-action-development.up.railway.app/ |
+
+©️ MIT 2023 ChainPatrol
