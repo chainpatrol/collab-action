@@ -119,6 +119,11 @@ export class ChainPatrolActionController extends BaseDiscordActionController<API
           type: 'URL',
           content: url,
         },
+        {
+          headers: {
+            'X-API-KEY': process.env.CHAINPATROL_API_KEY,
+          },
+        },
       );
 
       if (response.data.status === 'BLOCKED') {
@@ -174,6 +179,11 @@ export class ChainPatrolActionController extends BaseDiscordActionController<API
             },
           ],
           attachmentUrls: [],
+        },
+        {
+          headers: {
+            'X-API-KEY': process.env.CHAINPATROL_API_KEY,
+          },
         },
       );
 
