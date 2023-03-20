@@ -1,7 +1,6 @@
-# @collabland/example-hello-action
+# @chainpatrol/collab-action
 
-This example illustrates how to implement a Collab Action for Discord
-interactions.
+ChainPatrol's official Collab Action.
 
 ## Architectural diagram
 

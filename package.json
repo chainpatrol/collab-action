@@ -1,7 +1,8 @@
 {
-  "name": "@collabland/example-hello-action",
+  "private": true,
+  "name": "@chainpatrol/collab-action",
   "version": "0.0.1",
-  "description": "CollabLand Hello action",
+  "description": "Chainpatrol Collab.land action",
   "keywords": [
     "CollabLand",
     "Collab.Land",
@@ -28,10 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:abridged/collabland-hello-action.git"
-  },
-  "publishConfig": {
-    "access": "public"
+    "url": "git@github.com/chainpatrol/collab-action.git"
   },
   "license": "MIT",
   "files": [
@@ -58,6 +56,6 @@
     "@types/node": "^18.11.15",
     "typescript": "~4.9.5"
   },
-  "copyright.owner": "Abridged, Inc.",
-  "author": "Abridged, Inc."
+  "copyright.owner": "ChainPatrol",
+  "author": "ChainPatrol"
 }
