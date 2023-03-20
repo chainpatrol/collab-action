@@ -50,6 +50,8 @@ export class ChainPatrolActionController extends BaseDiscordActionController<API
         version: {name: '0.0.1'},
         website: 'https://chainpatrol.io',
         description: 'The official ChainPatrol Collab Action for Discord',
+        category: 'Security',
+        keywords: ['security', 'chainpatrol', 'discord'],
       }),
       /**
        * Supported Discord interactions. They allow Collab.Land to route Discord
