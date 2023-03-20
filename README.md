@@ -1,4 +1,4 @@
-<center>
+<div align="center">
 
 ![hero image of collab action]()
 
@@ -11,7 +11,7 @@ ChainPatrol's Collab Action Bot is the official bot for Collab.land users to
 enhance their security against scams and phishing attempts in their Discord
 servers
 
-</center>
+</div>
 
 ---
 
