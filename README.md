@@ -22,8 +22,8 @@ servers
 
 ## Features :rocket:
 
-- :raising_hand: Easy integration with Discord servers for seamless user
-  experience.
+- :raising_hand: Easy integration with Discord servers through Collab.land
+  Marketplace for seamless user experience.
 - :white_check_mark: Check URLs against ChainPatrol's blacklist of known
   phishing sites using the `/chainpatrol check` command.
 - :police_car: Report scam URLs to ChainPatrol using the `/chainpatrol report`
