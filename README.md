@@ -1,6 +1,7 @@
 <div align="center">
 
-![hero image of collab action]()
+<img width="860" alt="ChainPatrol + Collab.land" src="https://user-images.githubusercontent.com/8302959/226473601-c2cb19e5-6dea-4f15-bd9e-0535d3b9795e.png">
+
 
 # ChainPatrol Collab Action Bot
 
