@@ -6,7 +6,7 @@
 import {generateEcdsaKeyPair, generateEd25519KeyPair} from '@collabland/action';
 import {getEnvVar, setEnvVar} from '@collabland/common';
 import {ApplicationConfig} from '@loopback/core';
-import {HelloActionApplication} from './application.js';
+import {ChainPatrolActionApplication} from './application.js';
 
 export async function main(config: ApplicationConfig = {}, publicKey?: string) {
   publicKey =
@@ -43,19 +43,19 @@ export async function main(config: ApplicationConfig = {}, publicKey?: string) {
     // Set the public key
     setEnvVar('COLLABLAND_ACTION_PUBLIC_KEY', publicKey, true);
   }
-  const app = new HelloActionApplication(config);
+  const app = new ChainPatrolActionApplication(config);
   await app.start();
 
   const url = app.restServer.url;
   if (config.rest == null) {
-    console.log(`Hello action is running at ${url}`);
+    console.log(`ChainPatrol action is running at ${url}`);
   }
   return {app, signingKey};
 }
 
 if (require.main === module) {
   main().catch(err => {
-    console.error('Fail to start the HelloWorld action: %O', err);
+    console.error('Fail to start the ChainPatrol action: %O', err);
     process.exit(1);
   });
 }

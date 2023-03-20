@@ -4,11 +4,11 @@
 // License text available at https://opensource.org/licenses/MIT
 
 import {Component} from '@loopback/core';
-import {HelloActionController} from './actions/hello-action.controller.js';
+import {ChainPatrolActionController} from './actions/chainpatrol-action.controller.js';
 
 /**
  * Register all services including command handlers, job runners and services
  */
-export class HelloActionComponent implements Component {
-  controllers = [HelloActionController];
+export class ChainPatrolActionComponent implements Component {
+  controllers = [ChainPatrolActionController];
 }

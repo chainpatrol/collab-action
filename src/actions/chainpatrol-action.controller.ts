@@ -24,14 +24,14 @@ import {api} from '@loopback/rest';
 import axios from 'axios';
 
 /**
- * HelloActionController is a LoopBack REST API controller that exposes endpoints
+ * ChainPatrolActionController is a LoopBack REST API controller that exposes endpoints
  * to support Collab Actions for Discord interactions.
  */
 @injectable({
   scope: BindingScope.SINGLETON,
 })
-@api({basePath: '/hello-action'}) // Set the base path to `/hello-action`
-export class HelloActionController extends BaseDiscordActionController<APIChatInputApplicationCommandInteraction> {
+@api({basePath: '/chainpatrol-action'}) // Set the base path to `/chainpatrol-action`
+export class ChainPatrolActionController extends BaseDiscordActionController<APIChatInputApplicationCommandInteraction> {
   /**
    * Expose metadata for the action
    * @returns

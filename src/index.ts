@@ -9,7 +9,7 @@ export * from './component.js';
 
 if (require.main === module) {
   main().catch(err => {
-    console.error('Fail to start the Hello action: %O', err);
+    console.error('Fail to start the ChainPatrol action: %O', err);
     process.exit(1);
   });
 }

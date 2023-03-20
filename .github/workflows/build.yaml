@@ -1,4 +1,4 @@
-name: Build @collabland/example-hello-action
+name: Build @chainpatrol/collab-action
 
 on:
   push:
@@ -23,5 +23,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
           check-latest: true
 
-      - run: npm ci
-      - run: npm test
+      - run: yarn install --frozen-lockfile
+      - run: yarn test
