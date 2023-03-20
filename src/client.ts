@@ -21,7 +21,7 @@ import {
 import {DiscordActionMetadata, DiscordActionRequest} from '@collabland/discord';
 
 /**
- * The interaction simulates `/hello-action John`
+ * The interaction simulates `/chainpatrol check metamask.com`
  */
 export const MOCKED_INTERACTION: APIChatInputApplicationCommandInteraction = {
   app_permissions: '4398046511103',
@@ -30,12 +30,18 @@ export const MOCKED_INTERACTION: APIChatInputApplicationCommandInteraction = {
   data: {
     guild_id: '929214449733230592',
     id: '1063553299804078151',
-    name: 'hello-action',
+    name: 'chainpatrol',
     options: [
       {
-        name: 'your-name',
-        type: ApplicationCommandOptionType.String,
-        value: 'John',
+        name: 'check',
+        type: ApplicationCommandOptionType.Subcommand,
+        options: [
+          {
+            name: 'url',
+            type: ApplicationCommandOptionType.String,
+            value: 'metamask.com',
+          },
+        ],
       },
     ],
     type: ApplicationCommandType.ChatInput,
@@ -78,7 +84,7 @@ export async function main(base?: string, signingKey?: string) {
 
   const interaction = MOCKED_INTERACTION;
   const fetch = getFetch();
-  const url = base ?? 'http://localhost:3000/hello-action';
+  const url = base ?? 'http://localhost:3000/chainpatrol-action';
   const result = await fetch(`${url}/metadata`);
   const metadata = await handleFetchResponse<DiscordActionMetadata>(result);
   if (base == null) {
@@ -96,7 +102,7 @@ export async function main(base?: string, signingKey?: string) {
 
 if (require.main === module) {
   main().catch(err => {
-    console.error('Fail to invoke the HelloWorld action: %O', err);
+    console.error('Fail to invoke the ChainPatrol action: %O', err);
     process.exit(1);
   });
 }
