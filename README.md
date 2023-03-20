@@ -28,12 +28,12 @@ servers
   phishing sites using the `/chainpatrol check` command.
 - :police_car: Report scam URLs to ChainPatrol using the `/chainpatrol report`
   command.
-- :podium: Display the ChainPatrol leaderboard of top reporters using the
+- :trophy: Display the ChainPatrol leaderboard of top reporters using the
   `/chainpatrol leaderboard` command. _(Coming soon)_
 - :eyes: Regular scans of Collab.land community messages to detect suspicious
   activity. _(Coming soon)_
-- :triangular*flag_on_post: Automatic notifications of potential scams to keep
-  users informed and safe *(Coming soon)\_
+- :triangular_flag_on_post: Automatic notifications of potential scams to keep
+  users informed and safe _(Coming soon)_
 
 ## Screenshots :camera:
 
