@@ -2,9 +2,10 @@
 
 ChainPatrol's official Collab Action.
 
-## Architectural diagram
-
-![collabland-hello-action](./docs/collabland-hello-action.png)
+| Environment | URL                                                           |
+| ----------- | ------------------------------------------------------------- |
+| Production  | https://chainpatrol-collab-action-production.up.railway.app/  |
+| Development | https://chainpatrol-collab-action-development.up.railway.app/ |
 
 ### Prerequisites
 
