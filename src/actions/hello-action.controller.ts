@@ -5,7 +5,6 @@
 
 import {
   APIChatInputApplicationCommandInteraction,
-  APIInteractionResponse,
   ApplicationCommandOptionType,
   ApplicationCommandSpec,
   ApplicationCommandType,
@@ -22,6 +21,7 @@ import {
 import {MiniAppManifest} from '@collabland/models';
 import {BindingScope, injectable} from '@loopback/core';
 import {api} from '@loopback/rest';
+import axios from 'axios';
 
 /**
  * HelloActionController is a LoopBack REST API controller that exposes endpoints
@@ -73,34 +73,115 @@ export class HelloActionController extends BaseDiscordActionController<APIChatIn
   protected async handle(
     interaction: DiscordActionRequest<APIChatInputApplicationCommandInteraction>,
   ): Promise<DiscordActionResponse> {
-    console.log(interaction.data);
-
     const option = getSubCommandOption(interaction);
 
     switch (option?.name) {
       case 'check': {
         const url = getSubCommandOptionValue(interaction, 'check', 'url');
-        const message = `You entered: ${url}!`;
-        const response: APIInteractionResponse = buildSimpleResponse(
-          message,
-          true,
-        );
-        return response;
+
+        if (!url) {
+          throw new Error('Invalid URL');
+        }
+
+        return this.handleCheckCommand({url});
       }
 
       case 'report': {
         const url = getSubCommandOptionValue(interaction, 'report', 'url');
-        const message = `You entered: ${url}!`;
-        const response: APIInteractionResponse = buildSimpleResponse(
-          message,
-          true,
-        );
-        return response;
+
+        if (!url) {
+          throw new Error('Invalid URL');
+        }
+
+        return this.handleReportCommand({url, interaction});
       }
 
       default: {
         throw new Error('Invalid subcommand');
       }
+    }
+  }
+
+  private async handleCheckCommand({
+    url,
+  }: {
+    url: string;
+  }): Promise<DiscordActionResponse> {
+    const escapedUrl = url.replace('.', '(dot)');
+
+    try {
+      // check url
+      const response = await axios.post(
+        'https://app.chainpatrol.io/api/v2/asset/check',
+        {
+          type: 'URL',
+          content: url,
+        },
+      );
+
+      if (response.data.status === 'BLOCKED') {
+        return buildSimpleResponse(
+          `🚨 **Alert** 🚨 \n\nThis link is a scam! \`${escapedUrl}\` \n\n_Please **DO NOT** click on this link._`,
+        );
+      } else if (response.data.status === 'ALLOWED') {
+        return buildSimpleResponse(
+          `✅ This link looks safe! \`${escapedUrl}\``,
+        );
+      } else if (response.data.status === 'UNKNOWN') {
+        return buildSimpleResponse(
+          `⚠️ **Warning** ⚠️ \n\nThis link is not currently in our database: \`${escapedUrl}\` \n\n_Please be careful and **DO NOT** click on this link unless you are sure it's safe._`,
+        );
+      } else {
+        return buildSimpleResponse(
+          `❓ We're not sure about this link. \`${escapedUrl}\``,
+        );
+      }
+    } catch (error) {
+      // Handle errors
+      console.error('error', error);
+      return buildSimpleResponse('Error with checking link');
+    }
+  }
+
+  private async handleReportCommand({
+    url,
+    interaction,
+  }: {
+    url: string;
+    interaction: DiscordActionRequest<APIChatInputApplicationCommandInteraction>;
+  }): Promise<DiscordActionResponse> {
+    const escapedUrl = url.replace('.', '(dot)');
+
+    try {
+      const guildId = interaction.guild_id;
+      const user = interaction.member!.user; // Bot should only be installed in a guild
+
+      // submit report
+      const response = await axios.post(
+        'https://app.chainpatrol.io/api/v2/report/create',
+        {
+          discordGuildId: guildId,
+          title: 'Discord Report',
+          description: `reported by discord user ${user.username} , Discord ID: ${user.id}`,
+          contactInfo: `discord user ${user.username} , Discord ID: ${user.id}`,
+          assets: [
+            {
+              content: url,
+              status: 'BLOCKED',
+              type: 'URL',
+            },
+          ],
+          attachmentUrls: [],
+        },
+      );
+
+      return buildSimpleResponse(
+        `✅ Thanks for submitting a report for \`${escapedUrl}\` ! \n\nWe've sent this report to the **${response.data.organization.name}** team and **ChainPatrol** to conduct a review. Once approved the report will be sent out to wallets to block.\n\nThanks for doing your part in making this space safer 🚀`,
+      );
+    } catch (error) {
+      // Handle errors
+      console.error('error', error);
+      return buildSimpleResponse('⚠️ Error with submitting report');
     }
   }
 
