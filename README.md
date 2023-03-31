@@ -25,7 +25,7 @@ servers
 
 - :raising_hand: Easy integration with Discord servers through Collab.land
   Marketplace for seamless user experience.
-- :white_check_mark: Check URLs against ChainPatrol's blacklist of known
+- :white_check_mark: Check URLs against ChainPatrol's blocklist of known
   phishing sites using the `/chainpatrol check` command.
 - :police_car: Report scam URLs to ChainPatrol using the `/chainpatrol report`
   command.
@@ -47,7 +47,7 @@ according to your preferences. The slash commands are listed below:
 
 | Command               | Description                                                          |
 | --------------------- | -------------------------------------------------------------------- |
-| `/chainpatrol check`  | Check a URL against ChainPatrol's blacklist of known phishing sites. |
+| `/chainpatrol check`  | Check a URL against ChainPatrol's blocklist of known phishing sites. |
 | `/chainpatrol report` | Report a scam URL to ChainPatrol.                                    |
 
 ## Screenshots :camera:
