@@ -169,8 +169,8 @@ export class ChainPatrolActionController extends BaseDiscordActionController<API
         {
           discordGuildId: guildId,
           title: 'Discord Report',
-          description: `reported by discord user ${user.username} , Discord ID: ${user.id}`,
-          contactInfo: `discord user ${user.username} , Discord ID: ${user.id}`,
+          description: `reported by discord user ${user.username}:${user.discriminator} , Discord ID: ${user.id}`,
+          contactInfo: `discord user ${user.username}:${user.discriminator} , Discord ID: ${user.id}`,
           assets: [
             {
               content: url,
