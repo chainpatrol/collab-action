@@ -11,7 +11,7 @@ import {getFetch} from '@collabland/common';
 import {expect, givenHttpServerConfig} from '@loopback/testlab';
 import {ApplicationCommandOptionType, ApplicationCommandType} from 'discord.js';
 import {ChainPatrolActionApplication} from '../../application.js';
-import {main as client, MOCKED_INTERACTION} from '../../client.js';
+import {MOCKED_INTERACTION, main as client} from '../../client.js';
 import {main as server} from '../../server.js';
 
 describe('ChainPatrolAction - ecdsa', () => {
@@ -98,7 +98,8 @@ describe('ChainPatrolAction - ecdsa', () => {
           {
             type: ApplicationCommandOptionType.Subcommand,
             name: 'check',
-            description: 'Check if a URL is a scam',
+            description:
+              "Check a URL against ChainPatrol's blocklist of known phishing sites.",
             options: [
               {
                 type: ApplicationCommandOptionType.String,
@@ -111,7 +112,8 @@ describe('ChainPatrolAction - ecdsa', () => {
           {
             type: ApplicationCommandOptionType.Subcommand,
             name: 'report',
-            description: 'Report a scam URL',
+            description:
+              'Report a scam URL to ChainPatrol. Once configured, reports will show up in your custom admin dashboard on ChainPatrol with the Discord username associated with the report.',
             options: [
               {
                 type: ApplicationCommandOptionType.String,
