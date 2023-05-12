@@ -65,7 +65,13 @@ If you need more help setting up your ChainPatrol mini-app, please refer to the 
 `,
         shortDescription:
           'ChainPatrol adds security tools to protect your Web3 community from scams',
-        icons: [],
+        icons: [
+          {
+            label: 'App icon',
+            src: 'https://github.com/chainpatrol/collab-action/blob/6b84bc60ea95215baed579e71a04dd5f0e994831/docs/chainpatrol-logo.png',
+            sizes: '512x512',
+          },
+        ],
         category: 'Security',
         keywords: ['security', 'chainpatrol', 'discord'],
       }),
