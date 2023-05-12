@@ -44,12 +44,28 @@ export class ChainPatrolActionController extends BaseDiscordActionController<API
       manifest: new MiniAppManifest({
         appId: 'chainpatrol-action',
         developer: 'chainpatrol.io',
-        name: 'ChainPatrolAction',
+        name: 'ChainPatrol',
         platforms: ['discord'],
         shortName: 'chainpatrol-action',
         version: {name: '0.0.1'},
         website: 'https://chainpatrol.io',
-        description: 'The official ChainPatrol Collab Action for Discord',
+        description: `[ChainPatrol](https://chainpatrol.io/) adds security tools to protect your Web3 community from scams
+
+**To get started:**
+
+1. Install the ChainPatrol Miniapp from the Collab.Land Marketplace.
+
+2. (OPTIONAL) [Reach out to the ChainPatrol team](https://chainpatrol.io/onboard/collab-land) to get a custom admin dashboard associated to your server where you can review reports and track which community members are helping protect your server.
+
+3. Your community members can then use \`/chainpatrol check\` to check suspect URLs against the global scam list if they see any suspicious messages.
+
+4. They can also report scams to ChainPatrol using the \`/chainpatrol report\` command and we'll investigate the report. If we find the report to be credible, we'll add the URL to our global scam list that is used by wallets like Coinbase and MetaMask to protect all of Web3. Help us protect the whole Web3 community by reporting scams to wallets!
+
+If you need more help setting up your ChainPatrol mini-app, please refer to the [supporting documentation here](https://help.collab.land/marketplace/apps/chainpatrol).
+`,
+        shortDescription:
+          'ChainPatrol adds security tools to protect your Web3 community from scams',
+        icons: [],
         category: 'Security',
         keywords: ['security', 'chainpatrol', 'discord'],
       }),
@@ -232,7 +248,8 @@ export class ChainPatrolActionController extends BaseDiscordActionController<API
           {
             type: ApplicationCommandOptionType.Subcommand,
             name: 'check',
-            description: 'Check if a URL is a scam',
+            description:
+              "Check a URL against ChainPatrol's blocklist of known phishing sites.",
             options: [
               {
                 type: ApplicationCommandOptionType.String,
@@ -247,7 +264,8 @@ export class ChainPatrolActionController extends BaseDiscordActionController<API
           {
             type: ApplicationCommandOptionType.Subcommand,
             name: 'report',
-            description: 'Report a scam URL',
+            description:
+              'Report a scam URL to ChainPatrol. Once configured, reports will show up in your custom admin dashboard on ChainPatrol with the Discord username associated with the report.',
             options: [
               {
                 type: ApplicationCommandOptionType.String,
