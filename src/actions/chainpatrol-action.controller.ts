@@ -242,7 +242,7 @@ If you need more help setting up your ChainPatrol mini-app, please refer to the 
     const commands: ApplicationCommandSpec[] = [
       {
         metadata: {
-          name: 'ChainPatrolAction',
+          name: 'ChainPatrol',
           shortName: 'chainpatrol',
           supportedEnvs: ['dev', 'qa', 'staging'],
         },
