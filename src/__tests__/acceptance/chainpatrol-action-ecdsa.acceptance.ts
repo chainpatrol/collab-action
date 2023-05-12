@@ -87,7 +87,7 @@ describe('ChainPatrolAction - ecdsa', () => {
     expect(result.metadata.applicationCommands).to.eql([
       {
         metadata: {
-          name: 'ChainPatrolAction',
+          name: 'ChainPatrol',
           shortName: 'chainpatrol',
           supportedEnvs: ['dev', 'qa', 'staging'],
         },
