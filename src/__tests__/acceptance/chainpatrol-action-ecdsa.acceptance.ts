@@ -113,7 +113,7 @@ describe('ChainPatrolAction - ecdsa', () => {
             type: ApplicationCommandOptionType.Subcommand,
             name: 'report',
             description:
-              'Report a scam URL to ChainPatrol. Once configured, reports will show up in your custom admin dashboard on ChainPatrol with the Discord username associated with the report.',
+              'Report a scam URL to ChainPatrol for review to add to the global blocklist.',
             options: [
               {
                 type: ApplicationCommandOptionType.String,
