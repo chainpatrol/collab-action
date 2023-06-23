@@ -13,6 +13,7 @@ export async function main(config: ApplicationConfig = {}, publicKey?: string) {
     publicKey ?? process.argv[2] ?? getEnvVar('COLLABLAND_ACTION_PUBLIC_KEY');
   let signingKey = '';
   if (publicKey == null || publicKey === 'ecdsa' || publicKey === 'ed25519') {
+    console.log('Generating a new action signing key...');
     const sigType = publicKey ?? 'ed25519';
     switch (sigType) {
       case 'ecdsa': {
@@ -43,6 +44,9 @@ export async function main(config: ApplicationConfig = {}, publicKey?: string) {
     // Set the public key
     setEnvVar('COLLABLAND_ACTION_PUBLIC_KEY', publicKey, true);
   }
+
+  console.log('Starting the ChainPatrol action...');
+
   const app = new ChainPatrolActionApplication(config);
   await app.start();
 

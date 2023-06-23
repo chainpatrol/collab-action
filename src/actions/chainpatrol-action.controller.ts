@@ -99,6 +99,8 @@ If you need more help setting up your ChainPatrol mini-app, please refer to the 
   ): Promise<DiscordActionResponse> {
     const option = getSubCommandOption(interaction);
 
+    console.log(`handling interaction (option.name=${option?.name})`);
+
     switch (option?.name) {
       case 'check': {
         const url = getSubCommandOptionValue(interaction, 'check', 'url');
@@ -134,6 +136,8 @@ If you need more help setting up your ChainPatrol mini-app, please refer to the 
     const escapedUrl = url.replace('.', '(dot)');
 
     try {
+      console.log(`checking url (url=${escapedUrl}`);
+
       // check url
       const response = await axios.post(
         'https://app.chainpatrol.io/api/v2/asset/check',
@@ -182,6 +186,8 @@ If you need more help setting up your ChainPatrol mini-app, please refer to the 
     const escapedUrl = url.replace('.', '(dot)');
 
     try {
+      console.log(`reporting url (url=${escapedUrl}`);
+
       const guildId = interaction.guild_id;
       const user = interaction.member!.user; // Bot should only be installed in a guild
 
