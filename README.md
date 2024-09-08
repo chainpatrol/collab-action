@@ -82,7 +82,7 @@ new and test it locally
 
 Explore more possibilities with Collab Action!
 
-3. [Build a custom Collab Action](https://dev.collab.land/docs/upstream-integrations/build-a-custom-action)
+3. [Build a custom Collab Action](https://dev.collab.land/docs/upstream-integrations/collab-actions/build-a-custom-action/)
 
 ---
 
