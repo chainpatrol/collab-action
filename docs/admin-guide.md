@@ -2,7 +2,7 @@
 
 ### About this app
 
-The [ChainPatrol](https://chainpatrol.io/) mini-app gives your community members
+The [ChainPatrol](https://chainpatrol.com/) mini-app gives your community members
 access to security tools to check URLs for scams and report malicious activity
 on your Discord server. Use the `/chainpatrol <sub-command>` commands to empower
 your community to protect themselves from phishing attacks and other scams.
